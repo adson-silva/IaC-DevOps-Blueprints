@@ -104,8 +104,8 @@ param location string = resourceGroup().location
 @allowed(['dev', 'staging', 'prod'])
 param environment string
 
-@description('Versão do Kubernetes')
-param kubernetesVersion string = '1.28'
+@description('Versão do Kubernetes (verificar versões disponíveis com az aks get-versions)')
+param kubernetesVersion string = '1.29'
 
 @description('ID da subnet para os nodes')
 param subnetId string

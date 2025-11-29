@@ -600,8 +600,9 @@ resource "google_container_cluster" "primary" {
   location = var.region
   
   # Usar release channel para updates automáticos
+  # STABLE: produção e staging, REGULAR: desenvolvimento
   release_channel {
-    channel = var.environment == "prod" ? "STABLE" : "REGULAR"
+    channel = var.environment == "dev" ? "REGULAR" : "STABLE"
   }
 
   # Remover node pool default
